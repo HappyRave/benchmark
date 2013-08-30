@@ -1,13 +1,19 @@
 # initial information about the project
 AC_INIT([benchmark],[0.0],[olivier.bonaventure@uclouvain.be])
 
+# automake initialization (mandatory) including a check
+# for automake API version >= 1.9
+# foreign is for ignoring that there is no NEWS, README, ...
+AM_INIT_AUTOMAKE([1.9 -Wall foreign])
+
+LT_INIT
+
+AC_CONFIG_MACRO_DIR([m4])
+
 # check for C++ preprocessor and compiler
 AC_PROG_CC
 AM_PROG_CC_C_O
 AC_PROG_LIBTOOL
-
-# automake initialization (mandatory) including a check for automake API version >= 1.9
-AM_INIT_AUTOMAKE([1.9])
 
 # use the C++ compiler for the following checks
 AC_LANG([C])
@@ -37,9 +43,25 @@ AC_SUBST([AM_CFLAGS])
 AC_SUBST([AM_LDFLAGS])
 
 # files to generate via autotools (prepare .am or .in source files)
-#AC_CONFIG_FILES([Makefile])
+AC_CONFIG_FILES([Makefile])
+AC_CONFIG_FILES([alloc/Makefile])
 AC_CONFIG_FILES([io/Makefile])
-AC_CONFIG_FILES([lib/Makefile.am])
+AC_CONFIG_FILES([lib/Makefile])
+AC_CONFIG_FILES([shell/Makefile])
+AC_CONFIG_FILES([argfct/Makefile])
+AC_CONFIG_FILES([memfork/Makefile])
+AC_CONFIG_FILES([mutsem/Makefile])
+AC_CONFIG_FILES([amdahl/Makefile])
+AC_CONFIG_FILES([calloc/Makefile])
+AC_CONFIG_FILES([file/Makefile])
+AC_CONFIG_FILES([fork/Makefile])
+AC_CONFIG_FILES([mmap/Makefile])
+AC_CONFIG_FILES([pipe/Makefile])
+AC_CONFIG_FILES([shm/Makefile])
+AC_CONFIG_FILES([tab/Makefile])
+AC_CONFIG_FILES([textbin/Makefile])
+AC_CONFIG_FILES([thread/Makefile])
+AC_CONFIG_FILES([types/Makefile])
 
 # finally this generates the Makefiles etc. for the build
 AC_OUTPUT
