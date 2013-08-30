@@ -1,6 +1,6 @@
 set title 'Benchmark of shm/processes vs heap/threads'
-set xlabel 'size of the shared memory [B]'
-set ylabel 'time [ns]'
+set xlabel 'size of the shared memory [4B]'
+set ylabel 'time [ns] / 10'
 set key right bottom
 #set logscale x
 plot 'heap.csv' using 1:2 title 'heap',\

@@ -1,0 +1,5 @@
+<p>En fonction du dispositif utilisé, threads ou processus, les mécanismes de communications changent. Les threads peuvent communiquer entre eux à travers le heap du processus, qui reste commun à tous les threads de celui ci, alors que les processus doivent recourir à de la mémoire partagée pour échanger des données.
+
+<p>Nous allons dans ce benchmark tester l'efficacité (la vitesse d'accès) de ces 2 mémoires différentes. La méthode expérimentale consiste en la création dans le heap/shm d'un tableau, de plus en plus grand, par un des 2 threads/processus, puis de l'addition des membres du tableau entre eux par le deuxième thread/processus. Les temps écoulés sont représentés sur le graphe ci dessous.
+
+<p>Sur le graphe nous pouvons voir que les 2 mémoires sont quasiment à égalité, avec un très très léger avantage pour le heap par rapport à shm. On peut dire que ces 2 types de communication se valent entre eux au niveau d'efficacité.

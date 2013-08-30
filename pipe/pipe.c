@@ -1,8 +1,11 @@
-/*****************************************
+/**
  * pipe.c
  *
- * Temps de transfert de données par pipe
- *****************************************/
+ * \brief Temps de transfert de données par pipe
+ *
+ * Mesure du temps necessaire à l'envoie et la reception de données a travers un
+ * pipe entre 2 processus
+ */
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -94,9 +97,6 @@ int respond (int size, int* fdin, int* fdout) {
 	
 	free(buffer);
 	
-	//if (size == SIZE_MAX) close(fdout[1]);
-	//if (size == SIZE_MAX) close(fdin[0]);
-	
 	return 0;
 }
 
@@ -160,6 +160,8 @@ int main (int argc, char* argv[]) {
 			}
 			write_record_n(pipe_rec,i,stop_timer(t),SIZE_MAX);
 		}
+		close(fdout[0]);
+		close(fdin[1]);
 		exit(0);
 	} else if (pid < 0 ) {
 		err(pid, "erreur au fork");
@@ -174,7 +176,8 @@ int main (int argc, char* argv[]) {
 			//write_record_n(pipe_rec,i,stop_timer(t),SIZE_MAX);
 		}
 	}
-	
+	close(fdout[1]);
+	close(fdin[0]);
 	recorder_free(pipe_rec);
 	timer_free(t);
 	

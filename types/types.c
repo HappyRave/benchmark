@@ -1,8 +1,10 @@
-/***********************************************************
+/**
  * types.c
  *
- * Comparaison de vitesse de calcul avec differents types.
- ***********************************************************/
+ * \brief Comparaison de vitesse de calcul avec differents types.
+ *
+ * Compare les performances des Int face aux long long Int et aux float
+ */
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -10,7 +12,7 @@
 
 #include "benchmark.h"
 
-#define N 999
+#define N 2999
 
 /*
  *  _____       _

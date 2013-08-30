@@ -1,8 +1,12 @@
-/*************************************************************
+/**
  * amdahl.c
  *
- * Benchmark du gain de vitesse obtenu par la parallelisation
- *************************************************************/
+ * \brief Benchmark du gain de vitesse obtenu par la parallelisation
+ *
+ * Ce benchmark effectue une tâche CPU intensive (recherche de facteurs premiers
+ * des élements d'un tableau) avec de plus en plus de threads/processus et 
+ * mesure les gains de temps obtenus avec la parralélisation
+ */
 
 #include <stdio.h>
 #include <stdlib.h>

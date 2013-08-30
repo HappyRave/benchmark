@@ -1,0 +1,51 @@
+<p>Le C dispose de plusieurs types de variables, repris dans le tableau ci dessous:
+
+<table class="ccm">
+<tr>
+<th>Type de donn&eacute;e</th><th>Signification</th><th>Taille (en octets)</th><th>Plage de valeurs accept&eacute;e</th>
+</tr>
+<tr>
+<td>char</td><td>Caract&egrave;re</td><td>1</td><td>-128 &agrave; 127</td>
+</tr>
+<tr>
+<td>unsigned char</td><td>Caract&egrave;re non sign&eacute;</td><td>1</td><td>0 &agrave; 255</td>
+</tr>
+<tr>
+<td>short int</td><td>Entier court</td><td>2</td><td>-32 768 &agrave; 32 767</td>
+</tr>
+<tr>
+<td>unsigned short int </td><td>Entier court non sign&eacute;</td><td>2</td><td>0 &agrave; 65 535</td>
+</tr>
+<tr>
+<td>int</td><td>Entier</td><td>2 (sur processeur 16 bits)<br/>4 (sur processeur 32 bits) </td><td>-32 768 &agrave; 32 767<br/>-2 147 483 648 &agrave; 2 147 483 647</td>
+</tr>
+<tr>
+<td>unsigned int</td><td>Entier non sign&eacute;</td><td>2 (sur processeur 16 bits) <br/>4 (sur processeur 32 bits) </td><td>0 &agrave; 65 535<br/>0 &agrave; 4 294 967 295</td>
+</tr>
+<tr>
+<td>long int</td><td>Entier long</td><td>4</td><td>-2 147 483 648 &agrave; 2 147 483 647</td>
+</tr>
+<tr>
+<td>long long int</td><td>Entier très long</td><td>8</td><td>-9 223 372 036 854 775 808 &agrave; 9 223 372 036 854 775 807</td>
+</tr>
+<tr>
+<td>unsigned long int</td><td>Entier long non sign&eacute;</td><td>4</td><td>0 &agrave; 4 294 967 295</td>
+</tr>
+<tr>
+<td>float</td><td>Flottant (r&eacute;el)</td><td>4</td><td>3.4*10<sup>-38</sup> &agrave; 3.4*10<sup>38</sup></td>
+</tr>
+<tr>
+<td>double</td><td>Flottant double</td><td>8</td><td>1.7*10<sup>-308</sup> &agrave; 1.7*10<sup>308</sup></td>
+</tr>
+<tr>
+<td>long double</td><td>Flottant double long</td><td>10</td><td>3.4*10<sup>-4932</sup> &agrave; 3.4*10<sup>4932</sup></td>
+</tr>
+</table>
+
+<p>La différence entre les différents types ne réside pas seulement au niveau de leur capacité, mais aussi au niveau de la vitesse à laquelle le processeur les manipule.
+
+<p>Additioner deux Int (4B) prend moins de temps que d'additionner deux long long Int (8B). Un float (4B) étant plus difficile à manipuler à cause d'une arithmétique différente, additionner deux float prend aussi plus de temps que deux Int.
+
+<p>Pour illustrer cela nous allons calculer les 3000 premiers nombres premiers, en utilisant des Int, des long long Int et des float, et enregistrer le temps qu'il leur faut pour exécuter cette tache.
+
+<p>Sans surprise, les Int se montrent les plus rapides. Les float, ayant la même taille que les Int, s'avèrent néanmoins plus de 2 fois plus lent que les Int, et même légèrement plus lent que les long long Int.

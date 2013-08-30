@@ -1,1 +1,5 @@
-TEST
+<p>Un moyen de communication entre différents processus souvent utilisé sont les pipes. Il s'agit d'une voie de communication unidirectionnelle où un processus peut écrire de l'information d'un côté et un autre la lire de l'autre.
+
+<p>Dans ce benchmark nous allons tester la vitesse d'envoie de données à travers les pipes, avec des paquets allant de 1B à 64KB (taille maximale du buffer d'un pipe).
+
+<p>Sur le graphe on peut voir que l'utilisation d'un pipe a un coup en temps très similaire pour des paquets de 1B à 2KB, et puis le temps d'envoie et de lecture monte très vite jusqu'à 64KB.
